@@ -24,8 +24,10 @@ fn write(input: &str) -> Result<(), Error> {
     let buffered = BufReader::new(input);
 
     // Try to print the file contents
+    let mut x = 1;
     for words in buffered.lines() {
-        println!("{}", words?);
+        println!("{}. {}",x , words?);
+        x += 1;
     }
 
     // Return Ok
@@ -63,7 +65,8 @@ fn remove(input: i32, li: &str) -> Result<String, Error> {
 // Create run function to pass to the main file
 pub fn run() {
     println!("Shopping List");
-    while true {
+    println!("Valid commands include add, remove, list, and exit");
+    loop {
         let mut list: String;
         if read().is_err() {
             println!("File not found, write to create file.");
@@ -85,7 +88,7 @@ pub fn run() {
                 println!("------------------------------------");
             },
             "remove" => {
-                println!("Enter item: ");
+                println!("Enter item number: ");
                 let mut item = String::new();
                 std::io::stdin().read_line(&mut item).unwrap();
                 let int = item.trim().parse::<i32>().unwrap();
@@ -95,15 +98,22 @@ pub fn run() {
                 println!("------------------------------------");
             },
             "list" => {
+                let li = list.split("\n");
                 println!("----------- Shopping List -----------");
-                println!("{}", list);
+                let mut x = 1;
+                for i in li {
+                    if i != "" {
+                        println!("{}. {}", x, i);
+                        x += 1;
+                    }
+                }
                 println!("------------------------------------");
             },
             "exit" => {
                 break;
             },
             _ => {
-                println!("Invalid command");
+                println!("Valid commands include add, remove, list, and exit");
             }
         }
     }

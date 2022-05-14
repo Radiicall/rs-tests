@@ -24,7 +24,7 @@ fn wincon(comp: String, player: String) -> String {
 
 pub fn run() {
     println!("Rock Paper Scissors");
-    while true {
+    loop {
         println!("Enter your move (exit to quit): ");
         let mut input = String::new();
         std::io::stdin().read_line(&mut input).unwrap();

@@ -8,7 +8,7 @@ fn main() {
         println!("Please select a test to run");
         return;
     } else if args.iter().any(|i| &i == &"--help") || args.iter().any(|i| &i == &"-h") {
-        println!("-------------\nAvailable tests: \n-s  --shoppinglist  Shopping List\n-r  --rps  Rock Paper Scissors\n-c  --calc Calculator\n-------------");
+        println!("-------------\nAvailable tests: \n-s  --shoppinglist  Shopping List\n-r  --rps  Rock Paper Scissors\n-------------");
     }
     let arg = &args[1].to_lowercase();
     if arg == "-s" || arg == "--shoppinglist" {
