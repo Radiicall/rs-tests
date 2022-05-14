@@ -1,2 +1,4 @@
 # rs-tests
-`cargo run -h`
+`cargo build`
+`cd ./target/debug/`
+`./tests -h`
