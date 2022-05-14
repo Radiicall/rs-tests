@@ -1,7 +1,6 @@
 use std::*;
 pub mod shoppinglist;
 pub mod rps;
-pub mod calc;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -16,8 +15,6 @@ fn main() {
         shoppinglist::run();
     } else if arg == "-r" || arg == "--rps" {
         rps::run();
-    } else if arg == "-c" || arg == "--calc" {
-        calc::run();
     } else {
         println!("Use --help to see available tests");
     }
