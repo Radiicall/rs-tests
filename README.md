@@ -4,10 +4,9 @@ My first Rust project
 ## The Tests
 This repo has 2 tests
 
-<ol>
-  <li>Rock Paper Scissors CLI `-r / --rps`</li>
-  <li>Shopping List CLI `-s / --shoppinglist`</li>
-</ol>
+
+1. Rock Paper Scissors CLI `-r / --rps`
+2. Shopping List CLI `-s / --shoppinglist`
 
 I made these so I could learn how to use Rust.
 
